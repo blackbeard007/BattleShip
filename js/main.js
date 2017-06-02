@@ -1,25 +1,13 @@
-window.onload = function {
-	let buttons = (function () {
-		let game = document.getElementById('game');
+window.onload = function () {
+	let view = new View(),
+		field = document.getElementById('field');
 
-		function auto () {
-			let btn = document.createElement('button');
+	view.auto();
+	view.manual();
+	view.startGame();
 
-			game.appendChild(btn);
-		}
+	field.addEventListener('click', function () {
+		
+	});
 
-		function manual () {
-
-		}
-
-		function startGame () {
-
-		}
-
-		return {
-			auto: auto,
-			manual: manual,
-			startGame: startGame
-		}
-	})();
 }
