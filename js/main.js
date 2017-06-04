@@ -6,8 +6,8 @@ window.onload = function () {
 	view.manual();
 	view.startGame();
 
-	field.addEventListener('click', function () {
-		
+	field.addEventListener('click', function (e) {
+        let target = e.target.id;
+		view.getXY(target);
 	});
-
 }

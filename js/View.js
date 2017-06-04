@@ -1,9 +1,11 @@
 class View {
 	constructor() {
-
+		this.field = new Field();
 	}
 
-	drawCells() {}
+	drawCells() {
+
+	}
 
 	auto() {
 		let btn = document.createElement('button'),
@@ -12,6 +14,8 @@ class View {
 		btn.innerHTML = 'Auto';
 
 		game.appendChild(btn);
+
+		//btn.addEventListener('click', this.field.generateShipLocations.bind(this.field));
 	}
 
 	manual() {
@@ -30,9 +34,25 @@ class View {
 		game.appendChild(btn);
 	}
 
-	showHits() {}
+	showHits(location) {
+		let cell = document.getElementById(location);
 
-	showMiss() {}
+		cell.classList.add('hit');
+	}
 
-	getXY() {}
+	showMiss(location) {
+		let cell = document.getElementById(location);
+
+		cell.classList.add('miss');
+	}
+
+	getXY(guess) {
+		let result = this.field.isHit(guess);
+
+		if (result === true) {
+			this.showHits(guess);
+		} else {
+			this.showMiss(guess);
+		}
+	}
 }
