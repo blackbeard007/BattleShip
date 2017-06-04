@@ -39,37 +39,37 @@ class Field {
 			defaultShips = [
 				{
 					deck: 1,
-					locations: [0, 0, 0],
+					locations: [0],
 					hits: ['', '', '']
 				},
 				{
 					deck: 1,
-					locations: [0, 0, 0],
+					locations: [0],
 					hits: ['', '', '']
 				},
 				{
 					deck: 1,
-					locations: [0, 0, 0],
+					locations: [0],
 					hits: ['', '', '']
 				},
 				{
 					deck: 1,
-					locations: [0, 0, 0],
+					locations: [0],
 					hits: ['', '', '']
 				},
 				{
 					deck: 2,
-					locations: [0, 0, 0],
+					locations: [0, 0],
 					hits: ['', '', '']
 				},
 				{
 					deck: 2,
-					locations: [0, 0, 0],
+					locations: [0, 0],
 					hits: ['', '', '']
 				},
 				{
 					deck: 2,
-					locations: [0, 0, 0],
+					locations: [0, 0],
 					hits: ['', '', '']
 				},
 				{
@@ -84,22 +84,18 @@ class Field {
 				},
 				{
 					deck: 4,
-					locations: [0, 0, 0],
+					locations: [0, 0, 0, 0],
 					hits: ['', '', '']
 				}
 			],
 			ships = [];
 
 		for (let i = 0; i < shipsQuantity; i++) {
-			ships.push(generateShipLocations());
+			ships.push(generateShipLocations(defaultShips[i]));
 		}
 
-		function generateShipLocations () {
-			let ship = new Ship({
-					deck: 3,
-					locations: [0, 0, 0],
-					hits: ['', '', '']
-				}),
+		function generateShipLocations (prop) {
+			let ship = new Ship(prop),
 				locations;
 
 				do {

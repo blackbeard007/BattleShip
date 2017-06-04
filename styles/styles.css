@@ -1,8 +1,11 @@
+div#field {
+    display: inline-block;
+}
+
 table {
 	border-collapse: collapse;
 	width: 200px;
 	height: 200px;
-	margin-bottom: 20px;
 }
 td {
 	padding: 10px;
