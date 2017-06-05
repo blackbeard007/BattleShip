@@ -31,7 +31,7 @@ class View {
 			let field = new Field();
 
 			document.querySelectorAll('[data-position]').forEach(function (item) {
-				item.classList.remove('hit');
+				item.classList.remove('myShip');
 			});
 			
 			for (let i = 0; i < field.ships.length; i++) {

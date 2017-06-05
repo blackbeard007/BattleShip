@@ -23,10 +23,10 @@ class Field {
 	}
 
 	/*isAlive(ship) {
-		let result = true;
+		let result = false;
 		for (let i = 0; i < ship.deck; i++) {
 			if (ship.hits[i] !== 'hit') {
-				result = false;
+				result = true;
 				break;
 			}
 		}
@@ -37,7 +37,7 @@ class Field {
 	showMyShips(location) {
 		let dataLocation = document.querySelector('[data-position=' + '\"' + location + '\"]');
 
-		dataLocation.classList.add('hit');
+		dataLocation.classList.add('myShip');
 	}
 
 	addShips() {
