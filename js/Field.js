@@ -34,43 +34,49 @@ class Field {
 		return result;
 	}*/
 
+	showMyShips(location) {
+		let dataLocation = document.querySelector('[data-position=' + '\"' + location + '\"]');
+
+		dataLocation.classList.add('hit');
+	}
+
 	addShips() {
 		let shipsQuantity = this._numShips,
 			defaultShips = [
 				{
 					deck: 1,
 					locations: [0],
-					hits: ['', '', '']
+					hits: ['']
 				},
 				{
 					deck: 1,
 					locations: [0],
-					hits: ['', '', '']
+					hits: ['']
 				},
 				{
 					deck: 1,
 					locations: [0],
-					hits: ['', '', '']
+					hits: ['']
 				},
 				{
 					deck: 1,
 					locations: [0],
-					hits: ['', '', '']
+					hits: ['']
 				},
 				{
 					deck: 2,
 					locations: [0, 0],
-					hits: ['', '', '']
+					hits: ['', '']
 				},
 				{
 					deck: 2,
 					locations: [0, 0],
-					hits: ['', '', '']
+					hits: ['', '']
 				},
 				{
 					deck: 2,
 					locations: [0, 0],
-					hits: ['', '', '']
+					hits: ['', '']
 				},
 				{
 					deck: 3,
@@ -85,7 +91,7 @@ class Field {
 				{
 					deck: 4,
 					locations: [0, 0, 0, 0],
-					hits: ['', '', '']
+					hits: ['', '', '', '']
 				}
 			],
 			ships = [];
@@ -132,10 +138,11 @@ class Field {
 
 				outer:
 				for (let i = 0; i < shipsQuantity; i++) {
+
 					if (ships.length === 0) {
 						result = false;
 						break outer;
-					} else  if (ships[i] === undefined){
+					} else if (ships[i] === undefined){
 						break outer;
 					} else {
 						let ship = ships[i];

@@ -6,10 +6,6 @@ class Ship {
 		this._direction = data.direction;
 	}
 
-	isHit(x, y) {
-		
-	}
-
 	get locations() {
 		return this._locations;
 	}

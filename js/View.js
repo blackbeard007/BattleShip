@@ -4,7 +4,16 @@ class View {
 	}
 
 	drawCells() {
+		let field = document.getElementById('field'),
+			table = document.createElement('table'),
+			table2 = document.createElement('table');
 
+			table2.innerHTML = myTable;
+
+			table.innerHTML = enemyTable;
+
+			field.appendChild(table2);
+			field.appendChild(table);
 	}
 
 	auto() {
@@ -12,16 +21,34 @@ class View {
 			game = document.getElementById('game');
 
 		btn.innerHTML = 'Auto';
+		btn.classList.add('btn');
 
 		game.appendChild(btn);
 
-		//btn.addEventListener('click', this.field.generateShipLocations.bind(this.field));
+		btn.addEventListener('click', showShips);
+
+		function showShips() {
+			let field = new Field();
+
+			document.querySelectorAll('[data-position]').forEach(function (item) {
+				item.classList.remove('hit');
+			});
+			
+			for (let i = 0; i < field.ships.length; i++) {
+				let ship = field.ships[i].locations;
+
+				for (let j = 0; j < field.ships[i].decks; j++) {
+					field.showMyShips(ship[j]);
+				}
+			}
+		}
 	}
 
 	manual() {
 		let btn = document.createElement('button');
 
 		btn.innerHTML = 'Manual';
+		btn.classList.add('btn');
 
 		game.appendChild(btn);
 	}
@@ -30,6 +57,7 @@ class View {
 		let btn = document.createElement('button');
 
 		btn.innerHTML = 'START';
+		btn.classList.add('btn');
 
 		game.appendChild(btn);
 	}

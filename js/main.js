@@ -2,6 +2,7 @@ window.onload = function () {
 	let view = new View(),
 		field = document.getElementById('field');
 
+    view.drawCells();
 	view.auto();
 	view.manual();
 	view.startGame();

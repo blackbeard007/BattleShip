@@ -4,8 +4,9 @@ div#field {
 
 table {
 	border-collapse: collapse;
-	width: 200px;
-	height: 200px;
+	width: 500px;
+	height: 500px;
+    float: left;
 }
 td {
 	padding: 10px;
@@ -18,4 +19,39 @@ td {
 
 .miss {
     background-color: blue;
+}
+
+.btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 20px;
+    background: -moz-linear-gradient(
+        top,
+        #3ddb3d 0%,
+        #41db6a 25%,
+        #1a702e);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#3ddb3d),
+        color-stop(0.25, #41db6a),
+        to(#1a702e));
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: 3px solid #ffffff;
+    -moz-box-shadow:
+        0px 3px 11px rgba(000,000,000,0.5),
+        inset 0px 0px 1px rgba(044,153,008,1);
+    -webkit-box-shadow:
+        0px 3px 11px rgba(000,000,000,0.5),
+        inset 0px 0px 1px rgba(044,153,008,1);
+    box-shadow:
+        0px 3px 11px rgba(000,000,000,0.5),
+        inset 0px 0px 1px rgba(044,153,008,1);
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.2),
+        0px 1px 0px rgba(255,255,255,0.3);
+    margin-left: 20%;
+    outline: none;
 }
