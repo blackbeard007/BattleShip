@@ -5,7 +5,8 @@ class Field {
 	}
 
 	isHit(guess) {
-		let result = false;
+		let result = false,
+			killed;
 
 		for (let i = 0; i < this.ships.length; i++) {
 			let ship = this.ships[i],
@@ -17,6 +18,18 @@ class Field {
 				result = true;
 				break;
 			}
+		}
+
+		for (let i = 0; i < this.ships[i].locations.length; i++) {
+			if (this.ships[i].locations[i] === 'hit') {
+				killed = true;
+			} else {
+				killed = false;
+			}
+		}
+
+		if (killed) {
+			alert(killed);
 		}
 
 		return result;
